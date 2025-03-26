@@ -1,0 +1,154 @@
+   .glowbutton {
+     margin: 10rem 10rem 20rem;
+     --glow-color: rgb(176, 252, 255);
+     --glow-spread-color: rgba(123, 251, 255, 0.781);
+     --enhanced-glow-color: rgb(206, 255, 255);
+     --btn-color: rgb(61, 127, 136);
+     border: 0.25em solid var(--glow-color);
+     padding: 1em 3em;
+     color: var(--glow-color);
+     font-size: 15px;
+     font-weight: bold;
+     background-color: var(--btn-color);
+     border-radius: 1em;
+     outline: none;
+     box-shadow: 0 0 1em 0.25em var(--glow-color),
+       0 0 4em 1em var(--glow-spread-color),
+       inset 0 0 0.75em 0.25em var(--glow-color);
+     text-shadow: 0 0 0.5em var(--glow-color);
+     position: relative;
+     transition: all 0.3s;
+   }
+   
+   .glowbutton::after {
+     pointer-events: none;
+     content: "";
+     position: absolute;
+     top: 120%;
+     left: 0;
+     height: 100%;
+     width: 100%;
+     background-color: var(--glow-spread-color);
+     filter: blur(2em);
+     opacity: 0.7;
+     transform: perspective(1.5em) rotateX(35deg) scale(1, 0.6);
+   }
+   
+   .glowbutton:hover {
+     color: var(--btn-color);
+     background-color: var(--glow-color);
+     box-shadow: 0 0 1em 0.25em var(--glow-color),
+       0 0 4em 2em var(--glow-spread-color),
+       inset 0 0 0.75em 0.25em var(--glow-color);
+   }
+   
+   .glowbutton:active {
+     box-shadow: 0 0 0.6em 0.25em var(--glow-color),
+       0 0 2.5em 2em var(--glow-spread-color),
+       inset 0 0 0.5em 0.25em var(--glow-color);
+   }
+   
+
+/**********************githublightabove*************************/
+.lightButtons{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    gap: 3rem;
+  }
+   .lightButton button.bt {
+    position: relative;
+    height: 200px;
+    display: flex;
+    align-items: flex-end;
+    outline: none;
+    background: none;
+    border: none;
+  }
+  
+  .lightButton button.bt .buttonHolder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    width: 100px;
+    background-color: #0a0a0a;
+    border-radius: 5px;
+    color: #0f0f0f;
+    font-weight: 700;
+    transition: 300ms;
+    outline: #0f0f0f 2px solid;
+    outline-offset: 20;
+  }
+  
+  .lightButton button.bt .buttonHolder svg {
+    height: 50px;
+    fill: #0f0f0f;
+    transition: 300ms;
+  }
+  
+  .lightButton button.bt .lightHolder {
+    position: absolute;
+    height: 200px;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .lightButton button.bt .lightHolder .dot {
+    position: absolute;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    background-color: #0a0a0a;
+    border-radius: 10px;
+    z-index: 2;
+  }
+  
+  .lightButton button.bt .lightHolder .light {
+    position: absolute;
+    top: 0;
+    width: 350px;
+    height: 150px;
+    clip-path: polygon(50% 0%, 25% 100%, 75% 100%);
+    background: transparent;
+  }
+  
+  .lightButton button.bt:hover .buttonHolder svg {
+    fill: rgba(233, 57, 26);
+  }
+  
+  .lightButton button.bt:hover .buttonHolder {
+    color: rgba(233, 57, 26);
+    outline: rgba(233, 57, 26) 2px solid;
+    outline-offset: 2px;
+  }
+  
+  @keyframes flicker {
+    0% { opacity: 0; }
+  10% { opacity: 1; }
+  20% { opacity: 0; }
+  30% { opacity: 1; }
+  40% { opacity: 0.5; }
+  50% { opacity: 1; }
+  60% { opacity: 0; }
+  70% { opacity: 1; }
+  80% { opacity: 0.8; }
+  90% { opacity: 1; }
+  100% { opacity: 1; }
+  }
+
+  .lightButton button.bt:hover .lightHolder .light {
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+      180deg,
+      rgb(233, 57, 26) 0%,
+      rgba(200, 20, 100, 0) 75%,
+      rgba(200, 20, 100, 0) 100%
+    );
+    animation: flicker 0.8s ease-in-out forwards;
+  }
+/**********************githublightabove*************************/
+   
