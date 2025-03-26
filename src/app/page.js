@@ -5,7 +5,7 @@ import Testing from "./components/testing";
 export default function Home() {
   return (
     <div className={styles.main}>
-      <h1>hello</h1>
+      <h1>Resident Evil Theme</h1>
       <Testing />
     </div>
   );
