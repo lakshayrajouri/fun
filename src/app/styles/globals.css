@@ -5,6 +5,9 @@
   cursor: none ;
   scrollbar-width: none;
 }
+h1{
+  font-size: 4rem;
+}
 
 .headerContainer{
   display: flex;
